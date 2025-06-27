@@ -1,0 +1,187 @@
+@import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"); */
+
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+/* Hero Background */
+.hero-bg {
+  background-image: url("https://img.freepik.com/foto-gratis/primer-plano-peces-mantarraya-nadando-agua-algunos-peces-nadando-debajo-el_181624-14893.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+
+.hero-overlay {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.8) 0%,
+    rgba(59, 130, 246, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* Colores personalizados */
+.text-ocean {
+  color: #0369a1;
+}
+
+.bg-ocean-light {
+  background-color: #e0f2fe;
+}
+
+/* Animaciones */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Wave animation para textos */
+.wave-text {
+  background: linear-gradient(45deg, #2563eb, #1e40af, #3b82f6, #60a5fa);
+  background-size: 400% 400%;
+  animation: wave 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container personalizado */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Botones con efectos */
+.btn-ocean {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-ocean:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Efectos de focus para formularios */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+/* Gradiente para secciones */
+.ocean-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Loading animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scroll animations */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+}
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+}
